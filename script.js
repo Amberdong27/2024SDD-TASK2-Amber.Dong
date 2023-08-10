@@ -1,9 +1,9 @@
-let i = document.getElementById("playerGrid");
+let x = document.getElementById("playerGrid");
 
 function gameLoop(playerClicked){
     if (playerClicked == 'one'){
             alert ("grid");
-            i.style.color = "red";
+            x.style.color = 'red';
         } else {
         if (playerClicked == 'two'){
             alert ("Hello, World 2");
