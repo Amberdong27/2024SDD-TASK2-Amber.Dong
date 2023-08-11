@@ -1,9 +1,15 @@
-let x = document.getElementById("playerGrid");
+const grid = document.querySelector('.grid');
 
 function gameLoop(playerClicked){
     if (playerClicked == 'one'){
             alert ("grid");
-            x.style.color = 'red';
+            for (let i = 0; i < 3; i++){
+                for (let j = 0; j < 3; j++){
+                    const cell = document.createElement('div');
+                    cell.callList.add('cell');
+                    grid.appendChild(cell);
+                }
+            }
         } else {
         if (playerClicked == 'two'){
             alert ("Hello, World 2");

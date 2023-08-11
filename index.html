@@ -6,7 +6,7 @@
 </HEAD>
 <BODY>
     <style>
-        .body { 
+        .text { 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color:black;
             font-size: medium;
@@ -19,6 +19,17 @@
         }
         .title {
             font-size:50px;
+        } 
+        .grid {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            border: 3px solid black;
+            width: 400px;
+            height: 400px;
+        }
+        .cell {
+            border: 3px solid black;
         }
         /* button {
             all: unset; 
@@ -28,15 +39,15 @@
 <div class="title">
     <h1>Sudoku</h1>
 </div>
-<div class="body">
+<div class="text">
     <h2> Pick your grid size </h2>
 </div>
-<div class="Sudoku-grids">
+<div class="buttons">
     <h3><button id="1" type="button" onclick="gameLoop('one');">3 x 3</button>   
         <button id="2" type="button" onclick="gameLoop('two');">6 x 6</button>
         <button id="3" type="button" onclick="gameLoop('three');">9 x 9</button></h3>
-<div class="grid">
-    <h4 id="playerGrid">Player Grid</h4>
+    </div>
+<div class="grid"></div>
 <div class="endGame">
     <h5><button id="5" type="button" onclick="gameLoop('one');">New Game</button></h5>
 </div>
