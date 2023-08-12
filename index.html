@@ -23,17 +23,15 @@
         } 
        .box {
             display: grid;
-           /* grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr); */
             border: 2px solid black;
             width: 100px;
             height: 100px;
-            float: left;
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
         } 
         .row {
-            display: block;
-            float: left;
-            width: 100%;
+            display: inline-block;
         } 
         /* button {
             all: unset; 

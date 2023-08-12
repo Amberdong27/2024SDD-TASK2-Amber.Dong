@@ -12,7 +12,6 @@ function makeGrid1 () {
             row.appendChild(box);
         }
         document.getElementById('boxParent').appendChild(row);
-
     } 
 }
 
