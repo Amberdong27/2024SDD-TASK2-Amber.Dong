@@ -1,5 +1,8 @@
 
 function makeGrid1 () {
+    document.getElementById("1").disabled = true;
+    document.getElementById("2").disabled = true;
+    document.getElementById("3").disabled = true;
     for (var i = 0; i < 3; i++) {
         var row = document.createElement ('div');
         row.className = "row";
@@ -14,6 +17,9 @@ function makeGrid1 () {
 }
 
 function makeGrid2 () {
+    document.getElementById("1").disabled = true;
+    document.getElementById("2").disabled = true;
+    document.getElementById("3").disabled = true;
     for (var i = 0; i < 6; i++) {
         var row = document.createElement ('div');
         row.className = "row";
@@ -27,6 +33,9 @@ function makeGrid2 () {
 }
 
 function makeGrid3 () {
+    document.getElementById("1").disabled = true;
+    document.getElementById("2").disabled = true;
+    document.getElementById("3").disabled = true;
     for (var i = 0; i < 9; i++) {
         var row = document.createElement ('div');
         row.className = "row";
