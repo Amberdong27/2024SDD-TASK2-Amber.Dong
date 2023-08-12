@@ -38,6 +38,10 @@ function makeGrid3 () {
         document.getElementById('boxParent').appendChild(row);
     } 
 }
+
+function removeGrid() {
+    window.location.reload();
+}
 /*function gameLoop(playerClicked){
     if (playerClicked == 'one'){
             alert ("grid");
