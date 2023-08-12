@@ -4,6 +4,7 @@
 <TITLE>Sudoku</TITLE>
 <SCRIPT src="script.js"></SCRIPT>
 </HEAD>
+<center>
 <BODY>
     <style>
         .text { 
@@ -20,22 +21,24 @@
         .title {
             font-size:50px;
         } 
-        .grid {
+       .box {
             display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr);
-            border: 3px solid black;
-            width: 400px;
-            height: 400px;
-        }
-        .cell {
-            border: 3px solid black;
-        }
+           /* grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr); */
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            float: left;
+        } 
+        .row {
+            display: block;
+            float: left;
+            width: 100%;
+        } 
         /* button {
             all: unset; 
         } */
     </style>
-<center>
 <div class="title">
     <h1>Sudoku</h1>
 </div>
@@ -43,16 +46,13 @@
     <h2> Pick your grid size </h2>
 </div>
 <div class="buttons">
-    <h3><button id="1" type="button" onclick="gameLoop('one');">3 x 3</button>   
-        <button id="2" type="button" onclick="gameLoop('two');">6 x 6</button>
-        <button id="3" type="button" onclick="gameLoop('three');">9 x 9</button></h3>
+    <h3><button id="1" type="button" onclick="makeGrid1();">3 x 3</button>   
+        <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
+        <button id="3" type="button" onclick="makeGrid3();">9 x 9</button></h3>
     </div>
-<div class="grid"></div>
+<div id="boxParent"></div>
 <div class="endGame">
     <h5><button id="5" type="button" onclick="gameLoop('one');">New Game</button></h5>
-</div>
-</div>
-</div>
 </div>
 </center>
 </BODY>
