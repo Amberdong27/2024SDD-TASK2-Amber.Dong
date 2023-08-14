@@ -3,6 +3,7 @@ function makeGrid1 () {
     document.getElementById("1").disabled = true;
     document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
+    document.getElementById("notes").innerHTML = "Hello,World";
     for (var i = 0; i < 3; i++) {
         var row = document.createElement ('div');
         row.className = "row";
