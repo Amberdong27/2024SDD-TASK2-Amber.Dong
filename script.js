@@ -3,7 +3,8 @@ function makeGrid1 () {
     document.getElementById("1").disabled = true;
     document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
-    document.getElementById("notes").innerHTML = "Hello,World";
+    document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
+    document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
     for (var i = 0; i < 3; i++) {
         var row = document.createElement ('div');
         row.className = "row";
@@ -20,6 +21,9 @@ function makeGrid2 () {
     document.getElementById("1").disabled = true;
     document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
+    document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-6 can be inputted";
+    document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
+    document.getElementById("extra2").innerHTML = "Each box are 3 x 2";
     for (var i = 0; i < 6; i++) {
         var row = document.createElement ('div');
         row.className = "row";
@@ -36,6 +40,8 @@ function makeGrid3 () {
     document.getElementById("1").disabled = true;
     document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
+    document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
+    document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
     for (var i = 0; i < 9; i++) {
         var row = document.createElement ('div');
         row.className = "row";
@@ -51,23 +57,3 @@ function makeGrid3 () {
 function removeGrid() {
     window.location.reload();
 }
-/*function gameLoop(playerClicked){
-    if (playerClicked == 'one'){
-            alert ("grid");
-           /*for (let i = 0; i < 3; i++){
-                for (let j = 0; j < 3; j++ ){
-                    const cell = document.createElement('div');
-                    cell.callList.add('cell');
-                    grid.appendChild(cell);
-                    alert ("creating grid");
-                } 
-            } else {
-        if (playerClicked == 'two'){
-            alert ("Hello, World 2");
-        } else {
-            if (playerClicked == 'three'){
-                alert ("Hello, World 3");
-            }
-        }
-    }
-} */
