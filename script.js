@@ -14,7 +14,7 @@ var numbers = [
 
 function makeGrid1 () { //board for 3x3 
     document.getElementById("1").disabled = true;
-    document.getElementById("2").disabled = true;
+   // document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
@@ -33,7 +33,7 @@ function makeGrid1 () { //board for 3x3
     } 
 }
 
-function makeGrid2 () { //board for 6x6
+/*function makeGrid2 () { //board for 6x6
     document.getElementById("1").disabled = true;
     document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
@@ -52,11 +52,11 @@ function makeGrid2 () { //board for 6x6
         }
         document.getElementById('board').appendChild(row);
     } 
-}
+} */
 
 function makeGrid3 () { //board for 9x9
     document.getElementById("1").disabled = true;
-    document.getElementById("2").disabled = true;
+   // document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";

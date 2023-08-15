@@ -29,11 +29,16 @@
             display: flex;
             margin: 0 auto;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
         } 
         .row {
             display: inline-block;
         } 
         /* button {
+            <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
             all: unset; 
         } */
     </style>
@@ -47,7 +52,6 @@
 </div>
 <div class="buttons">
     <h3><button id="1" type="button" onclick="makeGrid1();">3 x 3</button>   
-        <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
         <button id="3" type="button" onclick="makeGrid3();">9 x 9</button></h3>
     </div>
 <div id="board"></div>
