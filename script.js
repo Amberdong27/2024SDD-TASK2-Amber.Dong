@@ -1,7 +1,7 @@
 //9 arrays
 
 
-var numbers = [
+var numbers = [ //9x9 square
     "759462813",
     "463518297",
     "128973645",
@@ -13,6 +13,7 @@ var numbers = [
     "876359124" 
 ]
 
+
 function makeGrid1 () { //board for 3x3 
     document.getElementById("1").disabled = true;
    // document.getElementById("2").disabled = true;
@@ -23,20 +24,27 @@ function makeGrid1 () { //board for 3x3
         // <div id="0" class="row"></div>
         var row = document.createElement ('div');
         row.className = "row";
+        // <input id="0" class="box">
         for (var j = 0; j < 3; j++){
             var box = document.createElement ('input');
             box.maxLength = 1;
             box.className = "box";
-            box.id = i;
+            box.id = i.toString() + "-" + j.toString();
             box.innerText = numbers [j][i];
             row.appendChild(box);
+
+            //temporary solution 
+            box.type = "number";
+            box.min = "1";
+            box.max = "9";
         }
         document.getElementById('board').appendChild(row);
-    } 
-}
-
+    }
+} 
 
 function makeGrid3 () { //board for 9x9
+
+    
     document.getElementById("1").disabled = true;
    // document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
