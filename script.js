@@ -38,7 +38,7 @@ function makeGrid1 () { //board for 3x3
         row.className = "row";
         // <input id="0" class="box">
         for (var j = 0; j < 3; j++){
-            var box = document.createElement ('div');
+            var box = document.createElement ('input');
             box.maxLength = 1;
             box.className = "box";
             box.id = i.toString() + "-" + j.toString();
@@ -75,19 +75,21 @@ function makeGrid3 () { //board for 9x9
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
-    /*for (var i = 0; i < 9; i++) {
+    for (var i = 0; i < 9; i++) {
         var row = document.createElement ('div');
         row.className = "row";
         for (var j = 0; j < 9; j++){
             var box = document.createElement ('div');
             box.id = i.toString() + "-" + j.toString();
-            box.innerText = puzzle [j][i];
+            if (solution[j][i] != "-"){
+                box.innerText = solution[j][i];
+            }
             box.className = "box";
             row.appendChild(box);
         }
         document.getElementById('board').appendChild(row);
-    } */
-    for (var i = 0; i < 9; i ++) {
+    } 
+   /* for (var i = 0; i < 9; i ++) {
         for (var j = 0; j < 9; j++) {
             var box = document.createElement ('div');
             box.id = i.toString() + "-" + j.toString();
@@ -97,7 +99,7 @@ function makeGrid3 () { //board for 9x9
             box.classList.add("box");
             document.getElementById('board').append(box);
         }
-    }
+    } */
 }
 
 function removeGrid() {
