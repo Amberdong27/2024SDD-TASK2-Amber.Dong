@@ -30,6 +30,7 @@ function removeGrid() {
 }
 
 var numSelected = null;
+var tileSelected = null;
 
 function makeGrid1 () { //board for 3x3 
     document.getElementById("1").disabled = true;
@@ -37,27 +38,27 @@ function makeGrid1 () { //board for 3x3
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
-     for (var i = 0; i < 3; i++) {
+       for (var i = 0; i < 3; i++) {
         // <div id="0" class="row"></div>
         var row = document.createElement ('div');
         row.className = "row";
         // <input id="0" class="box">
         for (var j = 0; j < 3; j++){
-            var box = document.createElement ('input');
-            box.maxLength = 1;
-            box.className = "box";
-            box.id = i + "-" + j;
+            var tiles = document.createElement ('div');
+            tiles.maxLength = 1;
+            tiles.className = "box";
+            tiles.id = i.toString() + "-" + j.toString();
             if (solution[j][i] != "-"){
-                box.innerText = solution [j][i];
+                tiles.innerText = solution [j][i];
             }
-            row.appendChild(box);
+            row.appendChild (tiles);
             //temporary solution 
             //box.type = "number";
            // box.min = "1";
            // box.max = "9";
         } 
         document.getElementById('board').appendChild(row);
-    }
+    } 
         for (var r = 0; r < 1; r++) {
             for (var c = 1; c < 10; c++) {
              var numbers = document.createElement ('div');
@@ -89,9 +90,10 @@ function makeGrid3 () { //board for 9x9
         for (var j = 0; j < 9; j++) {
             var tiles = document.createElement ('div');
             tiles.id = i.toString() + "-" + j.toString();
-            if (puzzle [j][i] != "-") {
-                tiles.innerText = puzzle [j][i];
+            if (puzzle [i][j] != "-") {
+                tiles.innerText = puzzle [i][j];
             }
+        tiles.addEventListener("click", selectTile);
         tiles.classList.add("tiles");
         document.getElementById('board').append(tiles);
         }
@@ -104,8 +106,7 @@ function makeGrid3 () { //board for 9x9
         numbers.classList.add("numbers");
         document.getElementById('choices').appendChild(numbers);
         }
-}
-
+    }
     function selectNumber(){
         if (numSelected != null) {
             numSelected.classList.remove("numbers-selected");
@@ -113,6 +114,28 @@ function makeGrid3 () { //board for 9x9
         numSelected = this;
         numSelected.classList.add("numbers-selected");
     }
+
+    function selectTile (){
+        if (numSelected) {
+            if (this.innerText != ""){
+                return;
+            }
+            this.innerText = numSelected.id;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Extra Code or old code to be used later possible
     /*
