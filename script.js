@@ -89,6 +89,12 @@ function makeGrid3 () { //board for 9x9
             if (puzzle [i][j] != "-") {
                 tiles.innerText = puzzle [i][j];
             }
+            if (i == 2 || i == 5) {
+             tiles.classList.add("horizontal-line");
+            }
+            if (j == 2 || j == 5) {
+                tiles.classList.add("vertical-line");
+               }
         tiles.addEventListener("click", selectTile);
         tiles.classList.add("tiles");
         document.getElementById('board').append(tiles);

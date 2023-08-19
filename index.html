@@ -18,6 +18,37 @@
             width:200px;
             height:80px;
         }
+        #board {
+            width: 600px;
+            height: 600px;
+            
+
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; 
+            align-content: center; 
+        }
+
+        #choices {
+            width: 650px;
+            height: 64px;
+            
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; 
+        }
+        .tiles {
+            width: 64px;
+            height: 64px;
+            border: 1px solid grey;
+            background-color: none;
+
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        } 
         .numbers {
             border: 2px solid black;
             width: 64px;
@@ -34,40 +65,6 @@
         .title {
             font-size:50px;
         } 
-       .tiles {
-            border: 1.5px solid black;
-            width: 64px;
-            height: 64px;
-            background-color: none;
-
-            font-size: 20px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            margin: 0 auto;
-            flex-wrap: wrap; 
-        } 
-        #board {
-            width: 600px;
-            height: 600px;
-            
-
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap; 
- 
-        }
-
-        #choices {
-            width: 650px;
-            height: 64px;
-            
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap; 
-        }
 
         .numbers-selected {
             background-color: lightblue;
@@ -75,6 +72,16 @@
 
         .incorrect-number {
             background-color: lightcoral;
+        }
+
+        .horizontal-line {
+            border-bottom-color: black;
+            border-bottom-width: 2px;
+        }
+
+        .vertical-line {
+            border-right-color:black;
+            border-right-width: 2px;
         }
         /* button {
             <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
