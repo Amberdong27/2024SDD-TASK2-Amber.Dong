@@ -24,12 +24,9 @@ var puzzle = [
     "8--3--1--"
 ] 
 
-function removeGrid() {
-    window.location.reload();
-}
-
 var numSelected = null;
 var tileSelected = null;
+var x = 0;
 
 function makeGrid1 () { //board for 3x3 
     document.getElementById("1").disabled = true;
@@ -106,6 +103,7 @@ function makeGrid3 () { //board for 9x9
         document.getElementById('choices').appendChild(numbers);
         }
     }
+    
     function selectNumber(){
         if (numSelected != null) {
             numSelected.classList.remove("numbers-selected");
@@ -113,26 +111,32 @@ function makeGrid3 () { //board for 9x9
         numSelected = this;
         numSelected.classList.add("numbers-selected");
     }
-
+    
     function selectTile (){
         if (numSelected) {
             if (this.innerText != ""){
                 return;
             }
-            this.innerText = numSelected.id;
             var coords = this.id.split("-");
+            x = this;
             var i = parseInt(coords[0]);
             var j = parseInt(coords[1]);
-
+    
             if (solution [i][j] == numSelected.id){
                 alert ("correct");
+                x.classList.remove("incorrect-number");
+                this.innerText = numSelected.id;
             } else {
                 alert ("incorrect");
+                x.classList.add("incorrect-number");
             }
         }
     }
-
-
+    function removeNumber() {
+    }
+    function removeGrid() {
+        window.location.reload();
+    }
 
 
 
