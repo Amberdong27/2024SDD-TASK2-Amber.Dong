@@ -19,9 +19,10 @@
             height:80px;
         }
         .numbers {
-            border: 1.5px solid black;
+            border: 2px solid black;
             width: 64px;
             height: 64px;
+            margin: 2px;
 
             font-size: 20px;
             font-weight: bold;
@@ -33,7 +34,7 @@
         .title {
             font-size:50px;
         } 
-       .box {
+       .tiles {
             border: 1.5px solid black;
             width: 64px;
             height: 64px;
@@ -59,12 +60,20 @@
         }
 
         #choices {
-            width: 600px;
+            width: 650px;
             height: 64px;
-            background-color: whitesmoke;
+            
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap; 
+        }
+
+        .numbers-selected {
+            background-color: lightblue;
+        }
+
+        .horizontal-line {
+            border-bottom: 1px red;
         }
         /* button {
             <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>

@@ -29,6 +29,8 @@ function removeGrid() {
     window.location.reload();
 }
 
+var numSelected = null;
+
 function makeGrid1 () { //board for 3x3 
     document.getElementById("1").disabled = true;
    // document.getElementById("2").disabled = true;
@@ -83,28 +85,34 @@ function makeGrid3 () { //board for 9x9
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
-    for (var i = 0; i < 9; i ++) {
+    for (var i = 0; i < 9; i ++) { // Grid 
         for (var j = 0; j < 9; j++) {
-            var box = document.createElement ('div');
-            box.id = i.toString() + "-" + j.toString();
+            var tiles = document.createElement ('div');
+            tiles.id = i.toString() + "-" + j.toString();
             if (puzzle [j][i] != "-") {
-                box.innerText = puzzle [j][i];
+                tiles.innerText = puzzle [j][i];
             }
-
-        box.classList.add("box");
-        document.getElementById('board').append(box);
+        tiles.classList.add("tiles");
+        document.getElementById('board').append(tiles);
         }
     }
-    for (var r = 0; r < 1; r++) {
-        for (var c = 1; c < 10; c++) {
-            var numbers = document.createElement ('div');
-            numbers.id = c;
-            numbers.innerText = c;
+    for (var r = 1; r < 10; r++) { //Choices
+        var numbers = document.createElement ('div');
+        numbers.id = r;
+        numbers.innerText = r;
+        numbers.addEventListener("click", selectNumber);
         numbers.classList.add("numbers");
-        document.getElementById('choices').append(numbers);
+        document.getElementById('choices').appendChild(numbers);
         }
-    }
 }
+
+    function selectNumber(){
+        if (numSelected != null) {
+            numSelected.classList.remove("numbers-selected");
+        }
+        numSelected = this;
+        numSelected.classList.add("numbers-selected");
+    }
 
 // Extra Code or old code to be used later possible
     /*
