@@ -25,6 +25,9 @@ var puzzle = [
     "8--3--1--"
 ]
 
+function removeGrid() {
+    window.location.reload();
+}
 
 function makeGrid1 () { //board for 3x3 
     document.getElementById("1").disabled = true;
@@ -32,7 +35,7 @@ function makeGrid1 () { //board for 3x3
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
-       for (var i = 0; i < 3; i++) {
+     for (var i = 0; i < 3; i++) {
         // <div id="0" class="row"></div>
         var row = document.createElement ('div');
         row.className = "row";
@@ -41,19 +44,27 @@ function makeGrid1 () { //board for 3x3
             var box = document.createElement ('input');
             box.maxLength = 1;
             box.className = "box";
-            box.id = i.toString() + "-" + j.toString();
+            box.id = i + "-" + j;
             if (solution[j][i] != "-"){
                 box.innerText = solution [j][i];
             }
             row.appendChild(box);
-
-            /*temporary solution 
-            box.type = "number";
-            box.min = "1";
-            box.max = "9"; */
+            //temporary solution 
+            //box.type = "number";
+           // box.min = "1";
+           // box.max = "9";
         } 
         document.getElementById('board').appendChild(row);
-    } 
+    }
+        for (var r = 0; r < 1; r++) {
+            for (var c = 1; c < 10; c++) {
+             var numbers = document.createElement ('div');
+                numbers.id = c;
+                numbers.innerText = c;
+        numbers.classList.add("numbers");
+        document.getElementById('choices').append(numbers);
+        }
+    }
   /*  for (var i = 0; i < 3; i ++) {
         for (var j = 0; j < 3; j++) {
             var box = document.createElement ('input');
@@ -63,49 +74,58 @@ function makeGrid1 () { //board for 3x3
             box.style.height = 200;
             box.style.width = 200;
             document.getElementById('board').appendChild(box);
-        }
-    } */
-} 
+        } */
+    }
 
 function makeGrid3 () { //board for 9x9
-
-    
     document.getElementById("1").disabled = true;
    // document.getElementById("2").disabled = true;
     document.getElementById("3").disabled = true;
     document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
-    for (var i = 0; i < 9; i++) {
-        var row = document.createElement ('div');
-        row.className = "row";
-        for (var j = 0; j < 9; j++){
-            var box = document.createElement ('div');
-            box.id = i.toString() + "-" + j.toString();
-            if (solution[j][i] != "-"){
-                box.innerText = solution[j][i];
-            }
-            box.className = "box";
-            row.appendChild(box);
-        }
-        document.getElementById('board').appendChild(row);
-    } 
-   /* for (var i = 0; i < 9; i ++) {
+    for (var i = 0; i < 9; i ++) {
         for (var j = 0; j < 9; j++) {
             var box = document.createElement ('div');
             box.id = i.toString() + "-" + j.toString();
             if (puzzle [j][i] != "-") {
                 box.innerText = puzzle [j][i];
             }
-            box.classList.add("box");
-            document.getElementById('board').append(box);
+
+        box.classList.add("box");
+        document.getElementById('board').append(box);
         }
+    }
+    for (var r = 0; r < 1; r++) {
+        for (var c = 1; c < 10; c++) {
+            var numbers = document.createElement ('div');
+            numbers.id = c;
+            numbers.innerText = c;
+        numbers.classList.add("numbers");
+        document.getElementById('choices').append(numbers);
+        }
+    }
+}
+
+// Extra Code or old code to be used later possible
+    /*
+
+
+ for (var i = 0; i < 9; i++) {
+        var row = document.createElement ('div');
+        row.className = "row";
+        for (var j = 0; j < 9; j++){
+            var box = document.createElement ('div');
+            //box.maxLength = 1;
+            box.id = i.toString() + "-" + j.toString();
+            if (solution[j][i] != "-"){
+                box.innerText = solution[j][i];
+            }
+            box.classList.add ("box");
+            row.appendChild(box);
+        }
+        document.getElementById('board').appendChild(row);
+    }
     } */
-}
-
-function removeGrid() {
-    window.location.reload();
-}
-
 
 /*function makeGrid2 () { //board for 6x6
     document.getElementById("1").disabled = true;

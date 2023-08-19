@@ -18,6 +18,18 @@
             width:200px;
             height:80px;
         }
+        .numbers {
+            border: 1.5px solid black;
+            width: 64px;
+            height: 64px;
+
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
         .title {
             font-size:50px;
         } 
@@ -35,22 +47,30 @@
             margin: 0 auto;
             flex-wrap: wrap; 
         } 
-        .row {
-            display: inline-block;
-        }
-      /*  #board {
+        #board {
             width: 600px;
             height: 600px;
-            background-color: grey;
+            background-color: whitesmoke;
 
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap; 
+ 
+        }
 
+        #choices {
+            width: 600px;
+            height: 64px;
+            background-color: whitesmoke;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; 
         }
         /* button {
             <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
             all: unset; 
+                    .row {
+            display: inline-block;
         } */
     </style>
 <div class="title">
@@ -63,10 +83,10 @@
 </div>
 <div class="buttons">
     <h3><button id="1" type="button" onclick="makeGrid1();">3 x 3</button>   
-        <button id="3" type="button" onclick="makeGrid3();">9 x 9</button></h3>
+    <button id="3" type="button" onclick="makeGrid3();">9 x 9</button> </h3>
     </div>
 <div id="board"></div>
-<div id="choices"></div>
+<h4><div id="choices"></div></h4>
 <div class="endGame">
     <h5><button id="5" type="submit" onclick="removeGrid();">New Game</button></h5>
 </div>
