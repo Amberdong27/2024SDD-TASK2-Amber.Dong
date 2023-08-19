@@ -1,7 +1,6 @@
 //9 arrays
 
-
-var solution = [ //9x9 square
+var solution = [ //9x9 
     "759462813",
     "463518297",
     "128973645",
@@ -23,7 +22,7 @@ var puzzle = [
     "----21---",
     "9---47---",
     "8--3--1--"
-]
+] 
 
 function removeGrid() {
     window.location.reload();
@@ -121,6 +120,15 @@ function makeGrid3 () { //board for 9x9
                 return;
             }
             this.innerText = numSelected.id;
+            var coords = this.id.split("-");
+            var i = parseInt(coords[0]);
+            var j = parseInt(coords[1]);
+
+            if (solution [i][j] == numSelected.id){
+                alert ("correct");
+            } else {
+                alert ("incorrect");
+            }
         }
     }
 
