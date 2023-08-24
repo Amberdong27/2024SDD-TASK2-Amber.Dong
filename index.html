@@ -50,7 +50,7 @@
             align-items: center;
         } 
         .numbers {
-            border: 2px solid black;
+            border: 1.5px solid black;
             width: 64px;
             height: 64px;
             margin: 2px;
@@ -83,18 +83,19 @@
             border-right-color:black;
             border-right-width: 2px;
         }
+
+        .correct-number {
+            background-color: whitesmoke;
+        }
+
+        #feedback {
+            color: red;
+        }
         /* button {
             <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
             all: unset; 
                     .row {
             display: inline-block;
-                  
-        .horizontal-line {
-            border-bottom: 1px red;
-        }
-        .vertical-line {
-            border-right: 1px red;
-        }
         } */
     </style>
 <div class="title">
@@ -106,13 +107,14 @@
     <h2 id="extra2"></h2>
 </div>
 <div class="buttons">
-    <h3><button id="1" type="button" onclick="makeGrid1();">3 x 3</button>   
-    <button id="3" type="button" onclick="makeGrid3();">9 x 9</button> </h3>
+    <h3>   
+    <button id="1" type="button" onclick="makeGrid3();">9 x 9</button> </h3>
     </div>
+    <h4 id="feedback"></h4>
 <div id="board"></div>
-<h4><div id="choices"></div></h4>
+<h5><div id="choices"></div></h5>
 <div class="endGame">
-    <h5><button id="5" type="submit" onclick="removeGrid();">New Game</button></h5>
+    <h6><button id="5" type="submit" onclick="removeGrid();">New Game</button></h6>
 </div>
 </center>
 </BODY>
