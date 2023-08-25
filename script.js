@@ -26,11 +26,13 @@ var puzzle = [
 var selectedNumber = 0;
 var tileSelected = 0;
 var x = 0;
+var correct = document.getElementByClassName("tiles");
 
 
-function makeGrid3 () { //board for 9x9
-    document.getElementById("1").disabled = true;
-    document.getElementById("notes").innerHTML = "Rules: Only numbers form 1-9 can be inputted";
+function makeGrid () { //board for 9x9
+    document.getElementById("make").disabled = true;
+    document.getElementById("restart").style.visibility = "visible";
+    document.getElementById("notes").innerHTML = "Rules: No repeating numbers in the same grid, column and row";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number"
     // Creating grid and generating puzzle
     for (var i = 0; i < 9; i ++) {  
@@ -39,13 +41,15 @@ function makeGrid3 () { //board for 9x9
             tiles.id = i + "-" + j;
             if (puzzle [i][j] != "-") {
                 tiles.innerText = puzzle [i][j];
-                tiles.classList.add("correct-number");
+                tiles.style.backgroundColor = "whitesmoke";
             }
             if (i == 2 || i == 5) {
-             tiles.classList.add("horizontal-line");
+             tiles.style.borderBottomColor = "black";
+             tiles.style.borderBottomWidth = "2px";
             }
             if (j == 2 || j == 5) {
-                tiles.classList.add("vertical-line");
+                tiles.style.borderRightColor = "black";
+                tiles.style.borderRightWidth = "2px";
                }
         tiles.addEventListener("click", selectTile);
         tiles.classList.add("tiles");
@@ -65,10 +69,10 @@ function makeGrid3 () { //board for 9x9
     
     function selectNumber(){
         if (selectedNumber != 0) {
-            selectedNumber.classList.remove("numbers-selected");
+            selectedNumber.style.backgroundColor = "white";
         }
         selectedNumber = this;
-        selectedNumber.classList.add("numbers-selected");
+        selectedNumber.style.backgroundColor = "lightblue";
     }
     
     function selectTile(){
@@ -76,19 +80,18 @@ function makeGrid3 () { //board for 9x9
             if (this.innerText != ""){
                 return;
             }
-            this.innerText = selectedNumber.id;
             var coords = this.id.split("-");
             var i = parseInt(coords[0]);
             var j = parseInt(coords[1]);
     
             if (solution [i][j] == selectedNumber.id){
+                this.innerText = selectedNumber.id;
                 this.classList.remove("incorrect-number");
-                this.classList.add("correct-number");
+                this.style.backgroundColor = "whitesmoke";
                 document.getElementById("feedback").innerHTML = "";
             } else {
-                this.classList.add("incorrect-number");
-                document.getElementById("feedback").innerHTML = "Number is incorrect";
-                this.innerText = "";
+                this.style.backgroundColor = "lightcoral";
+                document.getElementById("feedback").innerHTML = "Number already exists";
             }
         }
     }
