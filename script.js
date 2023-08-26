@@ -23,10 +23,9 @@ var puzzle = [
     "8--3--1--"
 ] 
 
-var selectedNumber = 0;
-var tileSelected = 0;
+var playerChoice = 0;
 var x = 0;
-var correct = document.getElementByClassName("tiles");
+
 
 
 function makeGrid () { //board for 9x9
@@ -69,25 +68,22 @@ function makeGrid () { //board for 9x9
     
     // When Selecting a Number 
     function selectNumber(){
-        if (selectedNumber != 0) {
-            selectedNumber.style.backgroundColor = "white";
+        if (playerChoice != 0) {
+            playerChoice.style.backgroundColor = "white";
         }
-        selectedNumber = this;
-        alert (selectedNumber);
-        selectedNumber.style.backgroundColor = "lightblue";
+        playerChoice = this;
+        playerChoice.style.backgroundColor = "lightblue";
     }
     
     // When selecting a tile
     function selectTile(){
-        if (selectedNumber) {
             if (this.innerText == ""){
                 var boxid = this.id.split("-"); // example 8-2 -> 8 2 
                 var i = boxid[0]; // example i = 8 
                 var j = boxid[1]; // example j = 2
     
-                if (solution [i][j] == selectedNumber.id){
-                    this.innerText = selectedNumber.id;
-                    this.classList.remove("incorrect-number");
+                if (solution [i][j] == playerChoice.id){
+                    this.innerText = playerChoice.id;
                     this.style.backgroundColor = "whitesmoke";
                     document.getElementById("feedback").style.color = "white";
                     document.getElementById("feedback").innerHTML = "PlaceHolder";
@@ -96,11 +92,8 @@ function makeGrid () { //board for 9x9
                     document.getElementById("feedback").style.color = "red";
                     document.getElementById("feedback").innerHTML = "Number already exists";
                 }
-            } else {
-                return;
             }
         }
-    }
-    function removeGrid() {
-        window.location.reload();
-    }
+function removeGrid() {
+    window.location.reload();
+}

@@ -14,7 +14,7 @@
         }
         button {
             font-weight:bold;
-            font-size: larger;
+            font-size: large;
             width:200px;
             height:80px;
         }
@@ -37,6 +37,7 @@
             flex-wrap: wrap; 
         }
         #restart {
+            font-size: large;
             visibility: hidden;
         }
         .tiles {
@@ -72,12 +73,6 @@
             font-size: large;
             color: white;
         }
-        /* button {
-            <button id="2" type="button" onclick="makeGrid2();">6 x 6</button>
-            all: unset; 
-                    .row {
-            display: inline-block;
-        } */
     </style>
 <div class="title">
     <h1>Sudoku</h1>
@@ -87,7 +82,7 @@
     <h2 id="extra"></h2>
     <h4 id="feedback">PlaceHolder</h4>
 </div>
-<div class="buttons">
+<div class="button">
     <h3>   
     <button id="make" type="button" onclick="makeGrid();">Start Game</button> </h3>
     </div>
