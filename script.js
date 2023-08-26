@@ -56,8 +56,8 @@ function makeGrid () { //board for 9x9
         document.getElementById('board').append(tiles);
         }
     }
-    // creating number select
-    for (var r = 1; r < 10; r++) { //Choices
+    // Number Selection
+    for (var r = 1; r < 10; r++) {
         var numbers = document.createElement ('div');
         numbers.id = r;
         numbers.innerText = r;
@@ -67,6 +67,7 @@ function makeGrid () { //board for 9x9
         }
     }
     
+    // When Selecting a Number 
     function selectNumber(){
         if (selectedNumber != 0) {
             selectedNumber.style.backgroundColor = "white";
@@ -75,84 +76,30 @@ function makeGrid () { //board for 9x9
         selectedNumber.style.backgroundColor = "lightblue";
     }
     
+    // When selecting a tile
     function selectTile(){
         if (selectedNumber) {
-            if (this.innerText != ""){
-                return;
-            }
-            var coords = this.id.split("-");
-            var i = parseInt(coords[0]);
-            var j = parseInt(coords[1]);
+            if (this.innerText == ""){
+                var boxid = this.id.split("-"); // example 8-2 -> 8 2 
+                var i = boxid[0]; // example i = 8 
+                var j = boxid[1]; // example j = 2
     
-            if (solution [i][j] == selectedNumber.id){
-                this.innerText = selectedNumber.id;
-                this.classList.remove("incorrect-number");
-                this.style.backgroundColor = "whitesmoke";
-                document.getElementById("feedback").innerHTML = "";
+                if (solution [i][j] == selectedNumber.id){
+                    this.innerText = selectedNumber.id;
+                    this.classList.remove("incorrect-number");
+                    this.style.backgroundColor = "whitesmoke";
+                    document.getElementById("feedback").style.color = "white";
+                    document.getElementById("feedback").innerHTML = "PlaceHolder";
+                } else {
+                    this.style.backgroundColor = "lightcoral";
+                    document.getElementById("feedback").style.color = "red";
+                    document.getElementById("feedback").innerHTML = "Number already exists";
+                }
             } else {
-                this.style.backgroundColor = "lightcoral";
-                document.getElementById("feedback").innerHTML = "Number already exists";
+                return;
             }
         }
     }
     function removeGrid() {
         window.location.reload();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-// Extra Code or old code to be used later possible
-    /*
-
-
- for (var i = 0; i < 9; i++) {
-        var row = document.createElement ('div');
-        row.className = "row";
-        for (var j = 0; j < 9; j++){
-            var box = document.createElement ('div');
-            //box.maxLength = 1;
-            box.id = i.toString() + "-" + j.toString();
-            if (solution[j][i] != "-"){
-                box.innerText = solution[j][i];
-            }
-            box.classList.add ("box");
-            row.appendChild(box);
-        }
-        document.getElementById('board').appendChild(row);
-    }
-    /*function makeGrid1 () { //board for 3x3 
-    document.getElementById("1").disabled = true
-    document.getElementById("3").disabled = true;
-    document.getElementById("notes").innerHTML = "Rules: Every number can only be inputted once";
-    document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number";
-    for (var i = 0; i < 3; i ++ ) {
-        for (var j = 0; j < 3; j++) {
-            var tiles = document.createElement ('div');
-            tiles.id = i + "-" + j;
-            tiles.style.height = "150px";
-            tiles.style.width = "150px";
-            if (puzzle3 [i][j] != "-") {
-                tiles.innerText = puzzle3 [i][j];
-            }
-        }
-        tiles.classList.add("tiles");
-        document.getElementById('board').append(tiles);
-    } 
-    for (var r = 1; r < 10; r++) { //Choices
-        var numbers = document.createElement ('div');
-        numbers.id = r;
-        numbers.innerText = r;
-        numbers.classList.add("numbers");
-        document.getElementById('choices').appendChild(numbers);
-        }
-} */
-
