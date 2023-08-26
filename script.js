@@ -73,6 +73,7 @@ function makeGrid () { //board for 9x9
             selectedNumber.style.backgroundColor = "white";
         }
         selectedNumber = this;
+        alert (selectedNumber);
         selectedNumber.style.backgroundColor = "lightblue";
     }
     
