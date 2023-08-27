@@ -79,7 +79,7 @@ function makeGrid () { //board for 9x9
     // When selecting a tile
     function selectTile(){
             if (this.innerText == ""){
-                var boxid = this.id.split("-"); // example 8-2 -> 8 2 
+                var boxid = this.id.split("-"); // example 8-2 -> [8 2]
                 var i = boxid[0]; // example i = 8 
                 var j = boxid[1]; // example j = 2
     
