@@ -70,9 +70,8 @@ function makeGrid () { //board for 9x9
     function selectNumber(){
         if (playerChoice != 0) {
             playerChoice.style.backgroundColor = "white";
-        }
-        playerChoice = this;
-        playerChoice.style.backgroundColor = "lightblue";
+        }  playerChoice = this
+            playerChoice.style.backgroundColor = "lightblue";
     }
     
     // When selecting a tile
@@ -84,9 +83,15 @@ function makeGrid () { //board for 9x9
     
                 if (solution [i][j] == playerChoice.id){
                     this.innerText = playerChoice.id;
+                    if (puzzle [i][j] == "-"){
+                        alert ("this works");
+                        puzzle.push ("playerChhoice.id");
+                    }
+                    this.innerText = playerChoice.id;
                     this.style.backgroundColor = "whitesmoke";
                     document.getElementById("feedback").style.color = "white";
                     document.getElementById("feedback").innerHTML = "PlaceHolder";
+                    endGame ();
                 } else {
                     this.style.backgroundColor = "lightcoral";
                     document.getElementById("feedback").style.color = "red";
@@ -94,6 +99,14 @@ function makeGrid () { //board for 9x9
                 }
             }
         }
+
+        function endGame () {
+            alert ("Hello, World");
+   /*         if (tiles.id === solution [i][j]) {
+                document.getElementById("feedback").innerHTML = "You solved it!";
+        } */
+    }
+//Starting a new Game 
 function removeGrid() {
     window.location.reload();
 }
