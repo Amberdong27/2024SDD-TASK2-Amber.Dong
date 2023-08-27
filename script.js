@@ -31,6 +31,7 @@ function makeGrid () { //board for 9x9
     document.getElementById("restart").style.visibility = "visible";
     document.getElementById("notes").innerHTML = "Rules: No repeating numbers in the same grid, column and row";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number"
+    
     // Creating grid and generating puzzle
     for (var i = 0; i < 9; i ++) {  
         for (var j = 0; j < 9; j++) {
@@ -53,6 +54,7 @@ function makeGrid () { //board for 9x9
         document.getElementById('board').append(tiles);
         }
     }
+
     // Number Selection
     for (var r = 1; r < 10; r++) {
         var numbers = document.createElement ('div');
@@ -60,16 +62,18 @@ function makeGrid () { //board for 9x9
         numbers.innerText = r;
         numbers.addEventListener("click", selectNumber);
         numbers.classList.add("numbers");
-        document.getElementById('choices').appendChild(numbers);
+        document.getElementById('choices').append(numbers);
         }
-    }
+}
     
     // When Selecting a Number 
     function selectNumber(){
         if (playerChoice != 0) {
             playerChoice.style.backgroundColor = "white";
-        }  playerChoice = this;
-            playerChoice.style.backgroundColor = "lightblue";
+        }  
+         playerChoice = this;
+         playerChoice.style.backgroundColor = "lightblue";
+
     }
     
     // When selecting a tile
@@ -81,12 +85,9 @@ function makeGrid () { //board for 9x9
     
                 if (solution [i][j] == playerChoice.id){
                     this.innerText = playerChoice.id;
-                    this.innerText = playerChoice.id;
                     this.style.backgroundColor = "whitesmoke";
-                    document.getElementById("feedback").style.color = "white";
-                    document.getElementById("feedback").innerHTML = "PlaceHolder";
-                    if (this.innerText != ""){
-                    }
+                    document.getElementById("feedback").style.color = "Green";
+                    document.getElementById("feedback").innerHTML = "Correct Number";
                 } else {
                     this.style.backgroundColor = "lightcoral";
                     document.getElementById("feedback").style.color = "red";
