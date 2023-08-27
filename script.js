@@ -86,6 +86,7 @@ function makeGrid () { //board for 9x9
                     if (puzzle [i][j] == "-"){
                         alert ("this works");
                         puzzle.push ("playerChhoice.id");
+                        console.log(puzzle);
                     }
                     this.innerText = playerChoice.id;
                     this.style.backgroundColor = "whitesmoke";
