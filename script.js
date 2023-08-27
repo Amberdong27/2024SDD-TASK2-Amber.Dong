@@ -1,5 +1,5 @@
 //9 arrays
-var solution = [ //9x9 
+var solution = [  
     "759462813",
     "463518297",
     "128973645",
@@ -24,12 +24,10 @@ var puzzle = [
 ] 
 
 var playerChoice = 0;
-var x = 0;
-
-
 
 function makeGrid () { //board for 9x9
     document.getElementById("make").disabled = true;
+    document.getElementById("make").style.visibility = "hidden";
     document.getElementById("restart").style.visibility = "visible";
     document.getElementById("notes").innerHTML = "Rules: No repeating numbers in the same grid, column and row";
     document.getElementById("extra").innerHTML = "Rows and Column must added up to the same number"
@@ -70,7 +68,7 @@ function makeGrid () { //board for 9x9
     function selectNumber(){
         if (playerChoice != 0) {
             playerChoice.style.backgroundColor = "white";
-        }  playerChoice = this
+        }  playerChoice = this;
             playerChoice.style.backgroundColor = "lightblue";
     }
     
@@ -83,32 +81,20 @@ function makeGrid () { //board for 9x9
     
                 if (solution [i][j] == playerChoice.id){
                     this.innerText = playerChoice.id;
-                    puzzle [i][j] == solution [i][j];
-                    console.log(puzzle);
-                    /* if (puzzle [i][j] == "-"){
-                        var value = playerChoice.id;
-                        puzzle.push(value); 
-                        console.log(puzzle);
-                    } */
                     this.innerText = playerChoice.id;
                     this.style.backgroundColor = "whitesmoke";
                     document.getElementById("feedback").style.color = "white";
                     document.getElementById("feedback").innerHTML = "PlaceHolder";
-                    //endGame ();
+                    if (this.innerText != ""){
+                    }
                 } else {
                     this.style.backgroundColor = "lightcoral";
                     document.getElementById("feedback").style.color = "red";
                     document.getElementById("feedback").innerHTML = "Number already exists";
                 }
-            }
+            } 
         }
 
-        function endGame () {
-            alert ("Hello, World");
-           if (tiles.id === solution) {
-                document.getElementById("feedback").innerHTML = "You solved it!";
-        }
-    }
 //Starting a new Game 
 function removeGrid() {
     window.location.reload();
