@@ -35,22 +35,22 @@ function makeGrid () { //board for 9x9
     // Creating grid and generating puzzle
     for (var i = 0; i < 9; i ++) {  
         for (var j = 0; j < 9; j++) {
-            var tiles = document.createElement ('div');
-            tiles.id = i + "-" + j;
+            var box = document.createElement ('div');
+            box.id = i + "-" + j;
             if (puzzle [i][j] != "-") {
-                tiles.innerText = puzzle [i][j];
-                tiles.style.backgroundColor = "whitesmoke";
+                box.innerText = puzzle [i][j];
+                box.style.backgroundColor = "whitesmoke";
             }
             if (i == 2 || i == 5) {
-             tiles.style.borderBottomColor = "black";
-             tiles.style.borderBottomWidth = "2px";
+             box.style.borderBottomColor = "black";
+             box.style.borderBottomWidth = "2px";
             }
             if (j == 2 || j == 5) {
-                tiles.style.borderRightColor = "black";
-                tiles.style.borderRightWidth = "2px";
+                box.style.borderRightColor = "black";
+                box.style.borderRightWidth = "2px";
                }
-        tiles.addEventListener("click", selectTile);
-        tiles.classList.add("tiles");
+        box.addEventListener("click", selectTile);
+        box.classList.add("box");
         document.getElementById('board').append(tiles);
         }
     }
