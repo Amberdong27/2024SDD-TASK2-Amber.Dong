@@ -83,16 +83,18 @@ function makeGrid () { //board for 9x9
     
                 if (solution [i][j] == playerChoice.id){
                     this.innerText = playerChoice.id;
-                    if (puzzle [i][j] == "-"){
-                        alert ("this works");
-                        puzzle.push ("playerChhoice.id");
+                    puzzle [i][j] == solution [i][j];
+                    console.log(puzzle);
+                    /* if (puzzle [i][j] == "-"){
+                        var value = playerChoice.id;
+                        puzzle.push(value); 
                         console.log(puzzle);
-                    }
+                    } */
                     this.innerText = playerChoice.id;
                     this.style.backgroundColor = "whitesmoke";
                     document.getElementById("feedback").style.color = "white";
                     document.getElementById("feedback").innerHTML = "PlaceHolder";
-                    endGame ();
+                    //endGame ();
                 } else {
                     this.style.backgroundColor = "lightcoral";
                     document.getElementById("feedback").style.color = "red";
@@ -103,9 +105,9 @@ function makeGrid () { //board for 9x9
 
         function endGame () {
             alert ("Hello, World");
-   /*         if (tiles.id === solution [i][j]) {
+           if (tiles.id === solution) {
                 document.getElementById("feedback").innerHTML = "You solved it!";
-        } */
+        }
     }
 //Starting a new Game 
 function removeGrid() {
