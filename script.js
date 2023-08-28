@@ -48,10 +48,10 @@ function makeGrid () { //board for 9x9
             if (j == 2 || j == 5) {
                 box.style.borderRightColor = "black";
                 box.style.borderRightWidth = "2px";
-               }
-        box.addEventListener("click", selectTile);
+            }
+        box.addEventListener("click", selectBox);
         box.classList.add("box");
-        document.getElementById('board').append(tiles);
+        document.getElementById('board').append(box);
         }
     }
 
@@ -77,7 +77,7 @@ function makeGrid () { //board for 9x9
     }
     
     // When selecting a tile
-    function selectTile(){
+    function selectBox(){
             if (this.innerText == ""){
                 var boxid = this.id.split("-"); // example 8-2 -> [8 2]
                 var i = boxid[0]; // example i = 8 
@@ -93,7 +93,9 @@ function makeGrid () { //board for 9x9
                     document.getElementById("feedback").style.color = "red";
                     document.getElementById("feedback").innerHTML = "Number already exists";
                 }
-            } 
+            } else if (box.innerText === puzzle[i][j]){
+                document.getElementById("feedback").innerHTML = "There is a number here";
+            }
         }
 
 //Starting a new Game 
