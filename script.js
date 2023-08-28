@@ -40,7 +40,6 @@ function makeGrid () { //board for 9x9
             if (puzzle [i][j] != "-") {
                 box.innerText = puzzle [i][j];
                 box.style.backgroundColor = "whitesmoke";
-                box.disabled = true;
             }
             if (i == 2 || i == 5) {
              box.style.borderBottomColor = "black";
