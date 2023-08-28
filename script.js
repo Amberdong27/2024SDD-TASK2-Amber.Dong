@@ -40,6 +40,7 @@ function makeGrid () { //board for 9x9
             if (puzzle [i][j] != "-") {
                 box.innerText = puzzle [i][j];
                 box.style.backgroundColor = "whitesmoke";
+                box.disabled = true;
             }
             if (i == 2 || i == 5) {
              box.style.borderBottomColor = "black";
@@ -57,7 +58,7 @@ function makeGrid () { //board for 9x9
 
     // Number Selection
     for (var r = 1; r < 10; r++) {
-        var numbers = document.createElement ('div');
+        var numbers = document.createElement ('button');
         numbers.id = r;
         numbers.innerText = r;
         numbers.addEventListener("click", selectNumber);
@@ -78,6 +79,7 @@ function makeGrid () { //board for 9x9
     
     // When selecting a tile
     function selectBox(){
+        if (playerChoice != 0){
             if (this.innerText == ""){
                 var boxid = this.id.split("-"); // example 8-2 -> [8 2]
                 var i = boxid[0]; // example i = 8 
@@ -93,10 +95,12 @@ function makeGrid () { //board for 9x9
                     document.getElementById("feedback").style.color = "red";
                     document.getElementById("feedback").innerHTML = "Number already exists";
                 }
-            } else if (this.innerText != ""){
-                document.getElementById("feedback").innerHTML = "There is a number here";
-            }
+            } 
+        } else if (playerChoice == 0){
+            document.getElementById("feedback").style.color = "red";
+            document.getElementById("feedback").innerHTML = "No number is selected";
         }
+    }
 
 //Starting a new Game 
 function removeGrid() {
