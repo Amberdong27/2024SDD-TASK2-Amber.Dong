@@ -93,7 +93,7 @@ function makeGrid () { //board for 9x9
                     document.getElementById("feedback").style.color = "red";
                     document.getElementById("feedback").innerHTML = "Number already exists";
                 }
-            } else if (box.innerText === puzzle[i][j]){
+            } else if (this.innerText != ""){
                 document.getElementById("feedback").innerHTML = "There is a number here";
             }
         }
