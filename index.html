@@ -66,8 +66,10 @@
             text-align: center;
             align-items: center;
         }
-        .title {
+        #title {
             font-size:50px;
+            font-weight: bold;
+
         } 
 
         #feedback {
@@ -78,9 +80,7 @@
             visibility: visible; 
         }
     </style>
-<div class="title">
-    <h1>Sudoku</h1>
-</div>
+<div id="title">Sudoku</div>
 <div class="text">
     <h2 id="notes"></h2>
     <h2 id="extra"></h2>
@@ -92,7 +92,7 @@
     </div>
 <div id="board"></div>
 <h5><div id="choices"></div></h5>
-<div class="endGame">
+<div class="newGame">
     <h6><button id="restart" type="submit" onclick="removeGrid();">New Game</button></h6>
 </div>
 </center>
